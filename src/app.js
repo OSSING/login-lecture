@@ -4,7 +4,7 @@
 const express = require("express");
 const app = express();
 
-const home = require("./routes/home");
+const home = require(".");
 
 // 앱 세팅
 app.set("views", "./views");
