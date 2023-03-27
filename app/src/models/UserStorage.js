@@ -19,6 +19,18 @@ class UserStorage {      // #처리로 public 변수를 private 변수로 만들
         }, {});
         return newUsers; // 은닉화된 private 변수를 반환
     }
+
+    static getUserInfo(id) {
+        const users = this.#users;
+        const idx = users.id.indexOf(id);
+        const userKeys = Object.keys(users); // => [id, psword, name]
+        const userInfo = userKeys.reduce((newUser, info) => { 
+            newUser[info] = users[info][idx];
+            return newUser;
+        }, {}); // reduce의 초기값
+
+        return userInfo;
+    }
 }
 
 module.exports = UserStorage;   // 해당 클래스를 밖에서 사용할 수 있도록 함.
