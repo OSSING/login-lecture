@@ -1,10 +1,10 @@
-"use strict"
+"use strict";
 
 const { reduce } = require("async");
 
 class UserStorage {      // #처리로 public 변수를 private 변수로 만들어 외부에서 접근 불가
     static #users = {    // static 으로 정적 변수를 만들어 줌으로써 클래스 자체에서 변수에 접근 가능
-        id: ["ohsing", "길개발", "길인턴"],
+        id: ["ohsing", "yeling", "이인턴"],
         psword: ["1234", "1234", "123456"],
         name: ["길오성", "이예린", "이종명"],
     };
