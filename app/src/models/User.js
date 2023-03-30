@@ -7,10 +7,9 @@ class User {
         this.body = body;
     }
 
-    login() {
+    async login() {   // await 함수는 async 안에서만 사용 가능
         const client = this.body;
-        const { id, psword } = UserStorage.getUserInfo(client.id); // this.body.id => 웹에서 로그인 요청된 id 값
-        // console.log(id, psword);
+        const { id, psword } = await UserStorage.getUserInfo(client.id); // this.body.id => 웹에서 로그인 요청된 id 값, await은 promise를 반환하는 곳에만 적용
 
         if (id) {
             if (id === client.id && psword === client.psword) {
