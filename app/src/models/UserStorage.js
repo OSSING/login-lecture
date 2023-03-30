@@ -31,6 +31,14 @@ class UserStorage {      // #처리로 public 변수를 private 변수로 만들
 
         return userInfo;
     }
+
+    static save(userInfo) {
+        const users = this.#users;
+        users.id.push(userInfo.id);
+        users.name.push(userInfo.name);
+        users.psword.push(userInfo.psword);
+        return { success: true };
+    }
 }
 
 module.exports = UserStorage;   // 해당 클래스를 밖에서 사용할 수 있도록 함.
