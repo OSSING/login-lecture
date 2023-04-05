@@ -1,6 +1,6 @@
 "use strict";
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 // 라우팅
 
 const app = require("../app");
